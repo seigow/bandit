@@ -7,8 +7,8 @@ class EpsilonGreedy(Policy):
     def __init__(self,n_arms,epsilon):
         self.n = n_arms # num of arms
         self.epsilon = epsilon # exploration rate
-        self.drawn_counts = [0] * self.n # num of draws
-        self.expected_reward = [0.] * self.n # reward probability for each arm
+        self.drawn_counts = np.zeros(self.n,dtype=int) # num of draws
+        self.expected_reward = np.zeros(self.n) # reward probability for each arm
 
     def select_arm(self):
         if np.random.random() > self.epsilon:

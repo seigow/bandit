@@ -9,8 +9,8 @@ class BinaryMultiplayTS(Policy):
     def __init__(self,n_arms,n_plays):
         self.n_arms = n_arms
         self.n_plays = n_plays
-        self.alpha = [1] * self.n_arms
-        self.beta = [1] * self.n_arms
+        self.alpha = np.array([1] * self.n_arms)
+        self.beta = np.array([1] * self.n_arms)
 
     def sampling(self):
         return np.random.beta(self.alpha,self.beta)
